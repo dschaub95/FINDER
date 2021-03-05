@@ -19,18 +19,20 @@ def GetSolution(STEPRATIO, MODEL_FILE):
     ## data_test
     data_test_path = '../data/real/Cost/'
 #     data_test_name = ['Crime', 'HI-II-14', 'Digg', 'Enron', 'Gnutella31', 'Epinions', 'Facebook', 'Youtube', 'Flickr']
-    data_test_name = ['Crime', 'HI-II-14']
+    data_test_name = ['Gnutella31']
     data_test_costType = ['degree', 'random']
     model_file = './FINDER_CN_cost/models/%s'%MODEL_FILE
     ## save_dir
-    save_dir = '../results/FINDER_CN_cost/real/'
+    save_dir = '../results/FINDER_CN_cost/real'
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
     
     save_dir_degree = save_dir + '/Data_degree'
     save_dir_random = save_dir + '/Data_random'
-    os.mkdir(save_dir_degree)
-    os.mkdir(save_dir_random)
+    if not os.path.exists(save_dir_degree):
+        os.mkdir(save_dir_degree)
+    if not os.path.exists(save_dir_random):
+        os.mkdir(save_dir_random)
 
     ## begin computing...
     print('The best model is :%s' % (model_file))
@@ -68,7 +70,7 @@ def EvaluateSolution(STEPRATIO, STRTEGYID):
     ## data_test
     data_test_path = '../data/real/Cost/'
 #     data_test_name = ['Crime', 'HI-II-14', 'Digg', 'Enron', 'Gnutella31', 'Epinions', 'Facebook', 'Youtube', 'Flickr']
-    data_test_name = ['Crime', 'HI-II-14']
+    data_test_name = ['Gnutella31']
     data_test_costType = ['degree', 'random']
 
     ## save_dir

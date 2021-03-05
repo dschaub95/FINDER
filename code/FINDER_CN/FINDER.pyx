@@ -822,6 +822,7 @@ class FINDER:
         cdef int new_action
         while (not self.test_env.isTerminal()):
             list_pred = self.PredictWithCurrentQNet(g_list, [self.test_env.action_list])
+            # len(list_pred) = 1?
             batchSol = np.argsort(-list_pred[0])[:step]
             for new_action in batchSol:
                 if not self.test_env.isTerminal():
@@ -881,6 +882,7 @@ class FINDER:
 
     def HXA(self, g, method):
         # 'HDA', 'HBA', 'HPRA', ''
+        # implements different functions to calculate ANC
         sol = []
         G = g.copy()
         while (nx.number_of_edges(G)>0):
@@ -898,7 +900,7 @@ class FINDER:
             node = keys[maxTag]
             sol.append(int(node))
             G.remove_node(node)
-        solution = sol + list(set(g.nodes())^set(sol))
+        solution = sol + list(set(g.nodes())^set(sol)) # contains two times sol and all node labels
         solutions = [int(i) for i in solution]
         Robustness = self.utils.getRobustness(self.GenNetwork(g), solutions)
         return Robustness, sol

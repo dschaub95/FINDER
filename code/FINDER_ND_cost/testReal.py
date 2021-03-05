@@ -19,7 +19,7 @@ def GetSolution(STEPRATIO, MODEL_FILE):
     ## data_test
     data_test_path = '../data/real/Cost/'
 #     data_test_name = ['Crime', 'HI-II-14', 'Digg', 'Enron', 'Gnutella31', 'Epinions', 'Facebook', 'Youtube', 'Flickr']
-    data_test_name = ['Crime', 'HI-II-14']
+    data_test_name = ['Digg','Enron','Epinions']
     data_test_costType = ['degree', 'random']
     model_file = './FINDER_ND_cost/models/%s'%MODEL_FILE
     ## save_dir
@@ -69,7 +69,7 @@ def EvaluateSolution(STEPRATIO, STRTEGYID):
     ## data_test
     data_test_path = '../data/real/Cost/'
 #     data_test_name = ['Crime', 'HI-II-14', 'Digg', 'Enron', 'Gnutella31', 'Epinions', 'Facebook', 'Youtube', 'Flickr']
-    data_test_name = ['Crime', 'HI-II-14']
+    data_test_name = ['Digg','Enron','Epinions']
     data_test_costType = ['degree', 'random']
 
     ## save_dir

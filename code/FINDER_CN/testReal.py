@@ -5,6 +5,7 @@ from FINDER import FINDER
 import numpy as np
 import time
 import pandas as pd
+import os
 
 
 def GetSolution(STEPRATIO, MODEL_FILE_CKPT):
@@ -13,7 +14,7 @@ def GetSolution(STEPRATIO, MODEL_FILE_CKPT):
     dqn = FINDER()
     data_test_path = '../data/real/'
 #     data_test_name = ['Crime','HI-II-14','Digg','Enron','Gnutella31','Epinions','Facebook','Youtube','Flickr']
-    data_test_name = ['Crime','HI-II-14']
+    data_test_name = ['Digg','Enron','Epinions']
     model_file_path = './FINDER_CN/models/'
     model_file_ckpt = MODEL_FILE_CKPT
     model_file = model_file_path + model_file_ckpt
@@ -45,7 +46,7 @@ def EvaluateSolution(STEPRATIO, MODEL_FILE_CKPT, STRTEGYID):
     dqn = FINDER()
     data_test_path = '../data/real/'
 #     data_test_name = ['Crime', 'HI-II-14', 'Digg', 'Enron', 'Gnutella31', 'Epinions', 'Facebook', 'Youtube', 'Flickr']
-    data_test_name = ['Crime','HI-II-14']
+    data_test_name = ['Digg','Enron','Epinions']
     save_dir = '../results/FINDER_CN/real/StepRatio_%.4f/'%STEPRATIO
     ## begin computing...
     df = pd.DataFrame(np.arange(2 * len(data_test_name)).reshape((2, len(data_test_name))), index=['solution', 'time'], columns=data_test_name)

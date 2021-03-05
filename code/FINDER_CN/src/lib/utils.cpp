@@ -111,7 +111,7 @@ double Utils::getRobustness(std::shared_ptr<Graph> graph, std::vector<int> solut
     std::vector<std::vector<int>> current_adj_list;
     std::shared_ptr<GraphUtil> graphutil =std::shared_ptr<GraphUtil>(new GraphUtil());
     Disjoint_Set disjoint_Set =  Disjoint_Set(graph->num_nodes);
-    std::vector<bool> backupAllVex(graph->num_nodes, false);
+    std::vector<bool> backupAllVex(graph->num_nodes, false); // initialized as false, length of num_nodes
     double totalMaxNum = 0.0;
     double temp = 0.0;
     double norm = (double)graph->num_nodes * (double)(graph->num_nodes-1) / 2.0;
