@@ -25,7 +25,7 @@ def GetSolution(STEPRATIO, MODEL_FILE):
     ## save_dir
     save_dir = '../results/FINDER_CN_cost/real'
     if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
+        os.makedirs(save_dir)
     
     save_dir_degree = save_dir + '/Data_degree'
     save_dir_random = save_dir + '/Data_random'

@@ -21,7 +21,7 @@ def GetSolution(STEPRATIO, MODEL_FILE_CKPT):
     ## save_dir
     save_dir = '../results/FINDER_CN/real'
     if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
+        os.makedirs(save_dir)
     ## begin computing...
     print ('The best model is :%s'%(model_file))
     dqn.LoadModel(model_file)
